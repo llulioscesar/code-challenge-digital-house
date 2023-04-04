@@ -5,18 +5,13 @@ import React, {
   PropsWithChildren,
   Fragment,
 } from 'react';
-import {
-  CallActionsPoints,
-  HeaderPoints,
-  SkeletonPoints,
-} from '@components/molecules';
-import {Points} from '@components/organism';
+import {CallActionsPoints, HeaderPoints} from '@components/molecules';
+import {Points, SkeletonPoints, ListProductsPoints} from '@components/organism';
 import {styledBasePoints} from '@components/templates/BasePoints/styled';
 import {Pressable, SafeAreaView, ScrollView} from 'react-native';
-import {useLazyGetQuery} from '@store/services';
+import {useGetQuery} from '@store/services';
 import {useAppSelector} from '@store/configureStore';
 import {FilterDate, pointsSelector} from '@store/slices';
-import {ListProductsPoints} from '@components/organism/ListProductsPoint';
 import {Product} from '@store/slices/points/dto';
 import {ActionSheet, View} from '@ant-design/react-native';
 import {day} from '@util';
@@ -33,15 +28,11 @@ export const BasePoints: FC<Props> = props => {
 
   const {filter, data} = useAppSelector(pointsSelector);
 
-  const [getData, {isLoading, isSuccess}] = useLazyGetQuery();
+  const {isLoading, isSuccess} = useGetQuery();
 
   const [products, setProducts] = useState<Product[]>([]);
   const [totalPoints, setTotalPoints] = useState(0);
   const [filterForDate, setFilterForDate] = useState<FilterDate | undefined>();
-
-  useEffect(() => {
-    getData();
-  }, [getData]);
 
   useEffect(() => {
     if (filter.date.length > 0) {

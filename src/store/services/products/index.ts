@@ -11,6 +11,7 @@ export const productsApi = createApi({
     baseUrl: URL_API,
     timeout: TIMEOUT,
   }),
+  keepUnusedDataFor: process.env.NODE_ENV !== 'test' ? 60 : 0,
   endpoints: builder => ({
     get: builder.query<GetProductsResponse, void>({
       query: () => '/api/v1/products',

@@ -7,11 +7,11 @@ import {
   CallActionProductDetail,
   HeaderProductDetail,
   ImageProduct,
-  InfoProduct,
 } from '@components/molecules';
 import {NativeStackScreenProps} from 'react-native-screens/native-stack';
 import {styledProductDetail} from './styled';
 import {Button} from '@components/atoms';
+import {InfoProduct} from '@components/organism';
 
 export type ProductDetailProps = NavigationProp<
   RootStackParamList,

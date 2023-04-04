@@ -1,7 +1,7 @@
 import React from 'react';
 import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import {View} from '@ant-design/react-native';
-import {styledSkeletonPoints} from '@components/molecules/SkeletonPoints/styled';
+import {styledSkeletonPoints} from '@components/organism/SkeletonPoints/styled';
 
 export const SkeletonPoints = () => {
   return (

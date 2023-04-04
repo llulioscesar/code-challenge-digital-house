@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {View} from '@ant-design/react-native';
 import {Text} from 'react-native';
 import {day, formatterCurrency} from '@util';
-import {styledInfoProduct} from '@components/molecules/InfoProduct/styled';
+import {styledInfoProduct} from '@components/organism/InfoProduct/styled';
 
 type Props = {
   date: string;

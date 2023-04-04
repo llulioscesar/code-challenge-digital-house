@@ -1,7 +1,6 @@
 import React, {FC, PropsWithChildren} from 'react';
 import {Provider} from '@ant-design/react-native';
 import {Theme} from '@ant-design/react-native/lib/style';
-import '@assets/fonts/Avenir.otf';
 
 type Props = PropsWithChildren & {};
 
