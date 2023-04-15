@@ -16,6 +16,11 @@ const {window} = new JSDOM('<!doctype html><html><body></body></html>', {
 global.window = window;
 global.document = window.document;
 
+afterAll(() => {
+  delete (global as any).window;
+  delete (global as any).document;
+});
+
 describe('BasePoints', () => {
   it('renders correctly', async () => {
     const {getAllByText} = render(
@@ -29,9 +34,4 @@ describe('BasePoints', () => {
     );
     await waitFor(() => expect(getAllByText('+')).toBeTruthy());
   });
-});
-
-afterAll(() => {
-  delete (global as any).window;
-  delete (global as any).document;
 });
